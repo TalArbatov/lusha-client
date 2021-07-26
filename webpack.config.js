@@ -1,5 +1,10 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const publicPath = path.join(__dirname, 'public');
+const htmlPlugin = new HtmlWebpackPlugin({
+  template: './src/index.html',
+  filename: './index.html'
+});
 
 module.exports = {
   entry: './src',
@@ -20,4 +25,7 @@ module.exports = {
     contentBase: './',
     hot: true
   },
+  plugins: [
+    htmlPlugin
+  ]
 }
