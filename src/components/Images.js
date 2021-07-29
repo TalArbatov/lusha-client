@@ -5,7 +5,8 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Images = ({
   images = [],
-  fetchImages
+  fetchImages,
+  hasMore
 }) => {
 
   const renderLoader = () => <LoadingMessage>Loading...</LoadingMessage>;
@@ -14,14 +15,14 @@ const Images = ({
       <InfiniteScroll
         dataLength={ images.length } 
         next={ fetchImages }
-        hasMore={ true }
+        hasMore={ hasMore }
         loader={ renderLoader() } >
         { images.map((image, index) => <Image 
           key={ index } 
           src={ image.url } 
           description={ image.description } 
           likes={ image.likes } /> 
-      ) }
+        ) }
       </InfiniteScroll>
     </ImageGrid>  
   );

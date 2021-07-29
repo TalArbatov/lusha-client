@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledDescription, StyledInformation, StyledLikes } from '../styles';
+import { StyledDescription, StyledLikes } from '../styles';
 
 const Description = ({
   description = '',

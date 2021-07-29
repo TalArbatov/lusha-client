@@ -5,19 +5,17 @@ import Images from './Images';
 import config from '../constants'
 
 const Wrapper = () => {
-  
   const [images, setImages] = useState([]);
   const [index, setIndex] = useState(0);
   const [onDisplay, setOnDisplay] = useState(false);
+
   useEffect(() => {
     fetchImages();
   }, [])
 
   const fetchImages = () => {
     axios.get('http://localhost:5050/images', {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
+      headers: { 'Access-Control-Allow-Origin': '*' },
       params: {
         index,
         interval: config.IMAGE_INTERVAL
@@ -30,7 +28,7 @@ const Wrapper = () => {
   }
   return (
     <Content>
-      { onDisplay ? <Images images={ images } fetchImages={ fetchImages }/> : <p>Loading...</p> }
+      { onDisplay ? <Images images={ images } fetchImages={ fetchImages } hasMore={ index < 120 }/> : <p>Loading...</p> }
     </Content>
   );
 };
