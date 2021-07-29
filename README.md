@@ -11,7 +11,7 @@
 ## Improvements 
 
 * The biggest impovement that can be made relates to the API fetching;
-by fetching a large amount of reconds and caching them, 
+by fetching a large amount of reconds and caching them (e.g. Redis), 
 we can reduce the amount of API calls, improving the user experience while scrolling.
 
 * styled-components - A correct file structure/architecture needs to be designed and maintained.
