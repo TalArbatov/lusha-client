@@ -1,11 +1,13 @@
 import React from 'react';
-
+import Wrapper from './components/Wrapper';
+import { Container, Content, GlobalStyle } from './styles';
 const App = () => {
   return (
-    <div>
-      Hello2
-    </div>
-  );
+    <Container>
+      <GlobalStyle />
+      <Wrapper />
+    </Container>
+  )
 };
 
 export default App;
